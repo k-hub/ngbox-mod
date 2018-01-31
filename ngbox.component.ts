@@ -126,6 +126,7 @@ import { NgBoxService } from './ngbox.service';
             top: 46%;
             font-size: 20px;
         }
+
         #ngBoxWrapper {
             background-color: rgba(0, 0, 0, 0.9);
             position: fixed;
@@ -155,24 +156,27 @@ import { NgBoxService } from './ngbox.service';
             max-width: 100%;
             max-height: 100%;
         }
+
         #buttons{
             position: relative;
             margin: 5px auto;
             text-align: right;
         }
+
         #buttons p{
-            float: left;
-            color: white;
-            text-align: left;
-            margin: 0 50px 0 0;
-            font-size: 12px;
-            font-family: sans-serif;
+            line-height: 20px;
+            color: #DCDCDC;
+            text-align: center;
+            font-size: 14px;
+            font-family: Roboto, sans-serif;
         }
+
         #buttons span.title{
             display: block;
-            height: 18px;
+            font-size: 16px;
             overflow: hidden;
         }
+
         #closeButton{
             position: absolute;
             top: 0px;
@@ -183,6 +187,7 @@ import { NgBoxService } from './ngbox.service';
             cursor: pointer;
             z-index: 1;     
         }
+
         .left{
             position: fixed;
             left: -5px;
@@ -193,6 +198,7 @@ import { NgBoxService } from './ngbox.service';
             padding: 30px;
             z-index: 1;            
         }
+
         .right{
             position: fixed;
             right: -10px;
