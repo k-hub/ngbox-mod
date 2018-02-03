@@ -90,8 +90,7 @@ export class NgBoxDirective implements AfterViewInit, OnDestroy {
                     title: this.title,
                     width: this.width ? this.width : 1000,
                     height: this.height ? this.height : 480,
-                    group: this.group,
-                    poster: this.poster
+                    group: this.group
                 };
             }
 /*            if (url.search('photoshooter') >= 0 || url.search('news247') >= 0) {
