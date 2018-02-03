@@ -44,6 +44,14 @@ export class NgBoxDirective implements AfterViewInit, OnDestroy {
         this.ngBox.open = true;
     }
 
+    @HostListener('touchstart', ['$event'])
+    onTouch($event) {
+        $event.preventDefault();
+        this.ngBox.loading = true;
+        this.ngBox.current = this.data;
+        this.ngBox.open = true;
+    }
+
     getData(url: string): SafeResourceUrl | boolean {
         if (url !== undefined || url !== '') {
             // Youtube
@@ -82,7 +90,8 @@ export class NgBoxDirective implements AfterViewInit, OnDestroy {
                     title: this.title,
                     width: this.width ? this.width : 1000,
                     height: this.height ? this.height : 480,
-                    group: this.group
+                    group: this.group,
+                    poster: this.poster
                 };
             }
 /*            if (url.search('photoshooter') >= 0 || url.search('news247') >= 0) {
