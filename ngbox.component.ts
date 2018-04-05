@@ -181,9 +181,14 @@ import { NgBoxService } from './ngbox.service';
         #buttons a.link{
             display: block;
             color: #DCDCDC;
-            font-size: 16px;
+            font-size: 14px;
             overflow: hidden;
             text-decoration: none;
+        }
+
+        #buttons a.link:hover{
+            color: #FFFFFF;
+            text-decoration: underline
         }
 
         #buttons a.link:visited{
