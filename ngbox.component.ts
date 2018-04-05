@@ -68,13 +68,13 @@ import { NgBoxService } from './ngbox.service';
                 Y2xhc3M9ImFjdGl2ZS1wYXRoIiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCIgZmlsbD0iI0JBQjlCOSIvPgoJCTwvZz4KCTwvZ
                 z4KPC9nPjwvZz4gPC9zdmc+Cg==">
                 <img *ngIf="ngBox.current.type == 1"
-                     (load)="isLoaded()" 
-                     #ngBoxContent 
+                     (load)="isLoaded()"
+                     #ngBoxContent
                      [src]="ngBox.current.url"
-                     [hidden]="ngBox.loading" 
+                     [hidden]="ngBox.loading"
                      (click)="nextNgBox()"
                      alt="">
-                <iframe *ngIf="ngBox.current.type == 2" 
+                <iframe *ngIf="ngBox.current.type == 2"
                         #ngBoxContent
                         [src]="ngBox.current.url"
                         width="{{ngBox.current.width}}"
@@ -82,19 +82,19 @@ import { NgBoxService } from './ngbox.service';
                         frameborder="0"
                         allowfullscreen>
                 </iframe>
-                <iframe *ngIf="ngBox.current.type == 3" 
+                <iframe *ngIf="ngBox.current.type == 3"
                         [src]="ngBox.current.url"
                         #ngBoxContent
                         width="{{ngBox.current.width}}"
                         height="{{ngBox.current.height}}"
-                        frameborder="0" 
-                        webkitallowfullscreen 
-                        mozallowfullscreen 
+                        frameborder="0"
+                        webkitallowfullscreen
+                        mozallowfullscreen
                         allowfullscreen>
                 </iframe>
-                <video *ngIf="ngBox.current.type == 4" 
+                <video *ngIf="ngBox.current.type == 4"
                     #ngBoxContent
-                    controls 
+                    controls
                     controlsList="nodownload"
                     [src]="ngBox.current.url"
                     width="{{ngBox.current.width}}"
@@ -104,14 +104,15 @@ import { NgBoxService } from './ngbox.service';
             <div #ngBoxButtons id="buttons" [hidden]="ngBox.loading">
                 <p>
                     <span class="title" *ngIf="ngBox.current.title">{{ngBox.current.title}}<br/></span>
+                    <a class="link" *ngIf="ngBox.current.link" href={{ngBox.current.link}} target="_blank">See a live preview here</a><br/>
                     <span class="pages" *ngIf="getHasGroup()">{{getCurrentIndex()}} of {{getCount()}}</span>
                 </p>
             </div>
 
 
-            
-            
-            
+
+
+
 
         </div>
     `,
@@ -177,6 +178,18 @@ import { NgBoxService } from './ngbox.service';
             overflow: hidden;
         }
 
+        #buttons a.link{
+            display: block;
+            color: #DCDCDC;
+            font-size: 16px;
+            overflow: hidden;
+            text-decoration: none;
+        }
+
+        #buttons a.link:visited{
+            color: #DCDCDC;
+        }
+
         #closeButton{
             position: absolute;
             top: 0px;
@@ -185,7 +198,7 @@ import { NgBoxService } from './ngbox.service';
             width: 30px; height: 30px;
             margin: 15px;
             cursor: pointer;
-            z-index: 1;     
+            z-index: 1;
         }
 
         .left{
@@ -196,7 +209,7 @@ import { NgBoxService } from './ngbox.service';
             top: 50%;
             width: 50px; height: 50px;
             padding: 30px;
-            z-index: 1;            
+            z-index: 1;
         }
 
         .right{
@@ -207,7 +220,7 @@ import { NgBoxService } from './ngbox.service';
             top: 50%;
             width: 50px; height: 50px;
             padding: 30px;
-            z-index: 1;             
+            z-index: 1;
         }
     `]
 })

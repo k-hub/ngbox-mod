@@ -15,9 +15,11 @@ export class NgBoxDirective implements AfterViewInit, OnDestroy {
     @Input() title: string;
     @Input() width: string;
     @Input() height: string;
+    @Input() link: string;
     @Input() group: string;
     @Input() cache: boolean;
     @Input() image: boolean;
+
 
     constructor(
         public ngBox: NgBoxService,
@@ -90,7 +92,8 @@ export class NgBoxDirective implements AfterViewInit, OnDestroy {
                     title: this.title,
                     width: this.width ? this.width : 1000,
                     height: this.height ? this.height : 480,
-                    group: this.group
+                    group: this.group,
+                    link: this.link
                 };
             }
 /*            if (url.search('photoshooter') >= 0 || url.search('news247') >= 0) {
@@ -112,7 +115,8 @@ export class NgBoxDirective implements AfterViewInit, OnDestroy {
                 title: this.title,
                 width: this.width,
                 height: this.height,
-                group: this.group
+                group: this.group,
+                link: this.link
             };
 
         }
