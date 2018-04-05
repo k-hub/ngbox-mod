@@ -104,7 +104,7 @@ import { NgBoxService } from './ngbox.service';
             <div #ngBoxButtons id="buttons" [hidden]="ngBox.loading">
                 <p>
                     <span class="title" *ngIf="ngBox.current.title">{{ngBox.current.title}}<br/></span>
-                    <a class="link" *ngIf="ngBox.current.link" href={{ngBox.current.link}} target="_blank">See a live preview here</a><br/>
+                    <a class="link" *ngIf="ngBox.current.link" href={{ngBox.current.link}} target="_blank">See a live preview here<br/></a>
                     <span class="pages" *ngIf="getHasGroup()">{{getCurrentIndex()}} of {{getCount()}}</span>
                 </p>
             </div>
